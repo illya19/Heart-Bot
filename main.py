@@ -8,7 +8,7 @@ WaitressStart()
 
 logging.basicConfig(level=logging.INFO)
 
-TOKEN = '6215463667:AAGON4KoXhKM2OrFR1GMqVA4BJ0Wf7mRBpw'
+TOKEN = '6457610909:AAGGgcxkr_ErAVWWXs1VYcPp0Q1D8pv2BQs'
 bot = Bot(TOKEN)
 dp = Dispatcher(bot)
 
@@ -29,7 +29,7 @@ async def send_heartbeats(chat_id):
         else:
             await bot.send_message(chat_id=chat_id, text=f'{count}❤️ сердечек')
         count += 1
-        await asyncio.sleep(1)  # задержка в 1 секунду
+        await asyncio.sleep(3)  # задержка в 1 секунду
 
 if __name__ == '__main__':
     dp.register_message_handler(starti_handler, commands=['starti'])
