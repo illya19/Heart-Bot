@@ -1,4 +1,3 @@
-
 import logging
 import asyncio
 from aiogram import Bot, Dispatcher, types
@@ -17,7 +16,7 @@ async def starti_handler(message: types.Message):
 
 async def send_heartbeats(chat_id):
     count = 1
-    while True:
+    while count <= 40:
         if count == 1:
             await bot.send_message(chat_id=chat_id, text=f'{count}❤️ сердечко')
         elif count % 10 == 1 and count % 100 != 11:
@@ -28,6 +27,8 @@ async def send_heartbeats(chat_id):
             await bot.send_message(chat_id=chat_id, text=f'{count}❤️ сердечек')
         count += 1
         await asyncio.sleep(3)  # задержка в 1 секунду
+        if count > 40:
+            break
 
 if __name__ == '__main__':
     dp.register_message_handler(starti_handler, commands=['starti'])
@@ -37,4 +38,3 @@ if __name__ == '__main__':
     finally:
         loop.run_until_complete(bot.close())
         loop.close()
-
