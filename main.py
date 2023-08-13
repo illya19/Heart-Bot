@@ -2,9 +2,7 @@
 import logging
 import asyncio
 from aiogram import Bot, Dispatcher, types
-from replit_keep_alive import WaitressStart
 
-WaitressStart() 
 
 logging.basicConfig(level=logging.INFO)
 
